@@ -1,5 +1,6 @@
 #install.packages('psych')
 library(psych)
+library(ggplot2)
 
 ##Read in CSV file
 RealDeal <- read.csv("C:\\Users\\vbaldew\\Python\\EconCybSec\\therealdeal_2016_04_20_17_21_45.csv")
@@ -17,6 +18,18 @@ currency <- "BTC "
 #Clean dataframe based on rows that conain prices that start with "BTC"
 RealDeal_Clean <- RealDeal[grep(currency,RealDeal$Price),]
 
-Unique_Products <- unique(RealDeal_Clean$Product)
+Unique_Products <- unique(RealDreal_Clean$Product)
+Unique_Products
 
+##Create dataframe with only Cybercrimes as product
+#State which products are cybercrime
+Cyber <- c(": 1Day Private Exploits",": Source Code",": 0-Day exploits",": Accounts")
 
+#Paste the products together in order to be used in the 'grep' function
+Cyber<- paste(Cyber,collapse="|")
+
+RealDeal_Cyber <- RealDeal_Clean[grep(Cyber,RealDeal_Clean$Product),]
+
+##Create barplot
+Data<- table(RealDeal_Cyber$Product)
+barplot(Data) 
