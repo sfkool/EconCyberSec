@@ -1,4 +1,5 @@
-#install.packages('psych')
+##Clean data and get Cybercrimes out
+
 library(psych)
 library(ggplot2)
 
@@ -18,27 +19,18 @@ currency <- "BTC "
 #Clean dataframe based on rows that conain prices that start with "BTC"
 RealDeal_Clean <- RealDeal[grep(currency,RealDeal$Price),]
 
+#Get unique products and show them
 Unique_Products <- unique(RealDeal_Clean$Product)
 Unique_Products
 
 ##Create dataframe with only Cybercrimes as product
 #State which products are cybercrime
-Cyber <- c(": 1Day Private Exploits",": Source Code",": 0-Day exploits",": Accounts")
+Cyber <- c(": 1Day Private Exploits",": Source Code",": 0-Day exploits",": Accounts",": Information ",": RATs",": Databases",": Cards",": Hardware",": Spam")
 
 #Paste the products together in order to be used in the 'grep' function
 Cyber<- paste(Cyber,collapse="|")
 
 RealDeal_Cyber <- RealDeal_Clean[grep(Cyber,RealDeal_Clean$Product),]
 
-##Create barplot
-## Code beneath is as a test, will be explained soon
-#Data <- table(RealDeal_Cyber$Product)
-
-#barplot(Data) 
-
-#write.table(RealDeal_Cyber, file = "C:\\Users\\vbaldew\\Documents\\EconCyberSec\\test.csv")
-
-#testDF <- read.csv("C:\\Users\\vbaldew\\Documents\\EconCyberSec\\test.csv", sep = ",")
-
-#Data2 <- table(testDF$Product)
-#barplot(Data2)
+##Write DataFrame to CSV
+write.table(RealDeal_Cyber, file = "C:\\Users\\vbaldew\\Documents\\EconCyberSec\\RealDeal_Cyber.csv",row.names=FALSE)

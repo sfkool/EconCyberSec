@@ -1,0 +1,9 @@
+ [1]  : 1Day Private Exploits  : Spam                   : FUD Exploits           : LSD                  
+ [5]  : Source Code            : Drugs                  : Hardware               : MDMA                 
+ [9]  : Other Tools            : Shrooms                : 0-Day exploits         : Cannabis             
+[13]  : Accounts               : Speed                  : Misc                   : Cocaine              
+[17]  : Information            : Weapons                : Pharmacy               : Hot                  
+[21]  : Services               : RATs                   : Cold                   : Money                
+[25]  : Firearms               : Tutorials              : Synthetics             : Cards                
+[29]  : Steroids               : Counterfeit            : DMT                    : Ketamine             
+[33]  : Methamphetamine        : Tobacco                : MDA                    : Databases 
