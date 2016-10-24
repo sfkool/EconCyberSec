@@ -8,11 +8,11 @@ library(reshape2)
 RealDeal_Cybercrimes <- read.csv("C:\\Users\\vbaldew\\Documents\\EconCyberSec\\RealDeal_Cyber_Clean.csv", sep = ",")
 
 ##Make barchart with frequency of Cyberattacks and save it immediately
-CybercrimesCount <- table(RealDeal_Cybercrimes$Product)
+CybercrimesCount <- (RealDeal_Cybercrimes$Product)
 #par(mar=c(9, 4.1, 4.1, 2.1))
 #barplot(CybercrimesCount,xlab="Frequency",las=2, horiz = TRUE, col="lightblue")
 png(file = "C:\\Users\\vbaldew\\Documents\\EconCyberSec\\R code\\boxplots\\vulnerabilities.png")
-qplot(RealDeal_Cybercrimes$Product,ylab="Frequency",xlab="Cybercrime assets",main = "Frequency of Cybercrime assets") +coord_flip()
+qplot(CybercrimesCount,ylab="Frequency",xlab="Cybercrime assets",main = "Frequency of Cybercrime assets") +coord_flip() + theme_minimal()
 dev.off()
 
 ##Add dollar prices to dataframe
